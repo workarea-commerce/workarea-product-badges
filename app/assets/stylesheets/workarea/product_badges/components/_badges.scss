@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    #BADGES
+\*------------------------------------*/
+
+$badges-top-offset: 0 !default;
+$badges-left-offset: 0 !default;
+$badges-product-detail-max-width: 150px !default;
+
+$badge-color: $black !default;
+$badge-background-color: $blue !default;
+$badge-new-background-color: $green !default;
+$badge-sale-background-color: $red !default;
+$badge-best-seller-background-color: $red !default;
+
+
+.badges {
+    position: absolute;
+    top: $badges-top-offset;
+    left: $badges-left-offset;
+    pointer-events: none;
+
+    .product-detail-container & {
+        position: static;
+        max-width: $badges-product-detail-max-width;
+    }
+}
+
+    .badges__badge {
+        margin-top: $spacing-unit;
+        padding: ($spacing-unit / 2) ($spacing-unit * 2);
+        color: $badge-color;
+        background-color: $badge-background-color;
+    }
+
+    .badges__badge--new {
+        background-color: $badge-new-background-color;
+    }
+
+    .badges__badge--sale {
+        background-color: $badge-sale-background-color;
+    }
+
+    .badges__badge--best-seller {
+        background-color: $badge-best-seller-background-color;
+    }
+
+        .badges__badge-text {}

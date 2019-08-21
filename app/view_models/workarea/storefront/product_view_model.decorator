@@ -1,0 +1,52 @@
+module Workarea
+  decorate Storefront::ProductViewModel, with: :product_badges do
+    def badges
+      @badges ||= begin
+        badges = Badges.sort.call(model.badges + automatic_badges)
+
+        if Badges.max_badges.present?
+          badges.first(Badges.max_badges)
+        else
+          badges
+        end
+      end
+    end
+
+    def automatic_badges
+      [new_product_badge, sale_badge, best_seller_badge].compact
+    end
+
+    private
+      def new_product_badge
+        if new? && model.new_badge?
+          t("workarea.storefront.products.badges.new")
+        end
+      end
+
+      def sale_badge
+        if on_sale? && model.sale_badge?
+          t("workarea.storefront.products.badges.sale")
+        end
+      end
+
+      def best_seller_badge
+        if best_seller? && model.best_seller_badge?
+          t("workarea.storefront.products.badges.best_seller")
+        end
+      end
+
+      def best_sellers
+        top_seller_limit = Badges.number_of_top_sellers
+        @best_sellers ||= Workarea::Insights::TopProducts.current.results.first(top_seller_limit).map { |p| p["product_id"] }
+      end
+
+      def best_seller?
+        return false unless best_sellers.present?
+        model.id.in?(best_sellers)
+      end
+
+      def new?
+        model.public_send(Workarea.config.product_badges[:new_date_field]) > Badges.new_threshold.days.ago
+      end
+  end
+end

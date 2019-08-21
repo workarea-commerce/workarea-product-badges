@@ -1,0 +1,8 @@
+inherit_from: .rails-rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'Rakefile'
+    - 'test/dummy/**/*'
+    - 'lib/badges.rb'
+    - 'lib/badges/**/*'

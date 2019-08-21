@@ -1,0 +1,40 @@
+.property
+  = label_tag 'product_badges_list', t('workarea.admin.catalog_products.edit.custom_badges_label'), class: 'property__name'
+  = text_field_tag 'product[badges_list]', @product.badges_list, class: 'text-box'
+  %span.property__note
+    = t('workarea.admin.catalog_products.edit.tags_note')
+    = link_to '#csv-help', data: { tooltip: '' } do
+      = inline_svg('workarea/admin/icons/help.svg', class: 'svg-icon svg-icon--small svg-icon--blue', title: t('workarea.admin.catalog_products.edit.learn_more'))
+
+%h2= t('workarea.admin.catalog_products.edit.auto_badging_enabled')
+
+.grid
+  .grid__cell.grid__cell--25
+    .property
+      %span.property__name
+        = t('workarea.admin.catalog_products.edit.new_product_badge')
+        = link_to '#new-badge-info', data: { tooltip: '' } do
+          = inline_svg('workarea/admin/icons/help.svg', class: 'svg-icon svg-icon--small svg-icon--blue', title: t('workarea.admin.catalog_products.edit.new_product_badge'))
+        #new-badge-info.tooltip-content
+          %p= t('workarea.admin.catalog_products.edit.new_badge_tool_tip', new_threshold: Workarea::Badges.new_threshold)
+      =  toggle_button_for 'product[new_badge]', @product.new_badge
+
+  .grid__cell.grid__cell--25
+    .property
+      %span.property__name
+        = t('workarea.admin.catalog_products.edit.sale_badge')
+        = link_to '#sale-badge-info', data: { tooltip: '' } do
+          = inline_svg('workarea/admin/icons/help.svg', class: 'svg-icon svg-icon--small svg-icon--blue', title: t('workarea.admin.catalog_products.edit.sale_badge'))
+        #sale-badge-info.tooltip-content
+          %p= t('workarea.admin.catalog_products.edit.sale_badge_tool_tip')
+      =  toggle_button_for 'product[sale_badge]', @product.sale_badge
+
+  .grid__cell.grid__cell--25
+    .property
+      %span.property__name
+        = t('workarea.admin.catalog_products.edit.best_seller_badge')
+        = link_to '#best-seller-badge-info', data: { tooltip: '' } do
+          = inline_svg('workarea/admin/icons/help.svg', class: 'svg-icon svg-icon--small svg-icon--blue', title: t('workarea.admin.catalog_products.edit.best_seller_badge'))
+        #best-seller-badge-info.tooltip-content
+          %p= t('workarea.admin.catalog_products.edit.best_seller_badge_tool_tip', top_sellers: Workarea::Badges.number_of_top_sellers)
+      =  toggle_button_for 'product[best_seller_badge]', @product.best_seller_badge

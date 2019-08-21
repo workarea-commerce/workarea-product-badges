@@ -1,0 +1,11 @@
+module Workarea
+  decorate Catalog::Product, with: :product_badges do
+    decorated do
+      field :new_badge, type: Boolean, default: true
+      field :sale_badge, type: Boolean, default: true
+      field :best_seller_badge, type: Boolean, default: true
+      field :badges, type: Array, default: []
+      list_field :badges
+    end
+  end
+end

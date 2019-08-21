@@ -1,0 +1,19 @@
+en:
+  workarea:
+    admin:
+      catalog_products:
+        edit:
+          auto_badging_enabled: Auto badging enabled for...
+          best_seller_badge: Best Seller badge
+          best_seller_badge_tool_tip: This badge will show if it is in the top %{top_sellers} best selling products.
+          custom_badges_label: Custom badges
+          new_product_badge: New product badge
+          new_badge_tool_tip: This badge will show if the product was created within the last %{new_threshold} days.
+          sale_badge: Sale badge
+          sale_badge_tool_tip: This badge will show if any of the pricing records are set to on sale.
+    storefront:
+      products:
+        badges:
+          best_seller: Best Seller
+          new: New
+          sale: Sale

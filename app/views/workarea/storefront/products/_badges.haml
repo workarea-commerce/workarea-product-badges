@@ -1,0 +1,5 @@
+- if product.badges.present?
+  .badges
+    - product.badges.each do |badge|
+      .badges__badge{ class: "badges__badge--#{badge.parameterize}" }
+        .badges__badge-text= badge
