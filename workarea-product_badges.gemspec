@@ -5,8 +5,8 @@ require "workarea/product_badges/version"
 Gem::Specification.new do |s|
   s.name        = "workarea-product_badges"
   s.version     = Workarea::ProductBadges::VERSION
-  s.authors     = ["Jake Beresford"]
-  s.email       = ["jberesford@weblinc.com"]
+  s.authors     = ['Curt Howard']
+  s.email       = ['choward@workarea.com']
   s.homepage    = "https://github.com/workarea-commerce/workarea-product_badges"
   s.summary     = "Product badges for the workarea ecommerce platform"
   s.description = "Add product badges to your storefront"
