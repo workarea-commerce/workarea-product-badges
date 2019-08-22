@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Workarea::ProductBadges::VERSION
   s.authors     = ["Jake Beresford"]
   s.email       = ["jberesford@weblinc.com"]
-  s.homepage    = "https://stash.tools.weblinc.com/projects/WP/repos/workarea-badges/browse"
+  s.homepage    = "https://github.com/workarea-commerce/workarea-product_badges"
   s.summary     = "Product badges for the workarea ecommerce platform"
   s.description = "Add product badges to your storefront"
 
