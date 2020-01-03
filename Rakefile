@@ -37,13 +37,12 @@ desc "Release version #{Workarea::ProductBadges::VERSION} of the gem"
 task :release do
   host = "https://#{ENV['BUNDLE_GEMS__WEBLINC__COM']}@gems.weblinc.com"
 
-  #Rake::Task['workarea:changelog'].execute
-  #system 'git add CHANGELOG.md'
-  #system 'git commit -m "Update CHANGELOG"'
-  #system 'git push origin HEAD'
+  Rake::Task['workarea:changelog'].execute
+  system 'git add CHANGELOG.md'
+  system 'git commit -m "Update CHANGELOG"'
 
   system "git tag -a v#{Workarea::ProductBadges::VERSION} -m 'Tagging #{Workarea::ProductBadges::VERSION}'"
-  system "git push --tags"
+  system "git push origin HEAD --follow-tags"
 
   system "gem build workarea-product_badges.gemspec"
   system "gem push workarea-product_badges-#{Workarea::ProductBadges::VERSION}.gem"
