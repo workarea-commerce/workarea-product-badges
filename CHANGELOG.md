@@ -1,3 +1,14 @@
+Workarea Product Badges 1.4.1 (2020-05-06)
+--------------------------------------------------------------------------------
+
+*   Add necessary require, inheritance and include so test runs properly
+
+    Co-authored-by: Luis Mercado <luis.mercado@sleepnumber.com>
+
+    Luis Mercado
+
+
+
 Workarea Product Badges 1.3.3 (2019-08-22)
 --------------------------------------------------------------------------------
 
