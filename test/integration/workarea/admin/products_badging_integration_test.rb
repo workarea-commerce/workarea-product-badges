@@ -1,6 +1,10 @@
+require "test_helper"
+
 module Workarea
   module Admin
-    class ProductsBadgingIntegrationTest
+    class ProductsBadgingIntegrationTest < Workarea::IntegrationTest
+      include Admin::IntegrationTest
+
       def test_updates_a_product_with_custom_badges
         product = create_product(variants: [])
 
